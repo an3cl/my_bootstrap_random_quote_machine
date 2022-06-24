@@ -1,0 +1,103 @@
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Random Quote Machine</title>
+
+    <script type="text/javascript">
+      const QUOTEBANK = [
+      {
+        quote: "You educate a man; you educate a man. You educate a woman; you educate a generation.",
+        author: "Brigham Young"
+      },
+      {
+        quote: "Why should we worry about what others think of us, do we have more confidence in their opinions than we do our own?",
+        author: "Brigham Young"
+      },
+      {
+        quote: "The only normal people are the ones you don’t know very well.",
+        author: "Alfred Adler"
+      },
+      {
+        quote: "Through others we become ourselves.",
+        author: "Lev. S. Vygotsky"
+      },
+      {
+        quote: "You’ve never been taught how to talk with your gestures, but you were taught to speak with words.",
+        author: "Paul Ekman"
+      },
+      {
+        quote: "According to Madam Pomfrey, thoughts could leave deeper scars than almost anything else.",
+        author: "J.K. Rowling"
+      },
+      {
+        quote: "Our wounds are often the openings into the best and most beautiful part of us.",
+        author: "David Richo"
+      },
+      {
+        quote: "Introverts, in contrast, may have strong social skills and enjoy parties and business meetings, but after a while wish they were home in their pajamas. They prefer to devote their social energies to close friends, colleagues, and family. They listen more than they talk, think before they speak, and often feel as if they express themselves better in writing than in conversation. They tend to dislike conflict. Many have a horror of small talk, but enjoy deep discussions.",
+        author: " Susan Cain"
+      },
+      {
+        quote: "The pendulum of the mind oscillates between sense and nonsense, not between right and wrong.",
+        author: "Carl Gustav Jung "
+      }
+
+    ];
+
+      window.onload = init;
+      function init() {
+        generateQuote()
+      }
+
+      function generateQuote() {
+        let quoteSize = QUOTEBANK.length;
+        let randomIndex = Math.floor(Math.random() * quoteSize);
+        let randomQuoteData = QUOTEBANK[randomIndex];
+
+        document.getElementById("text").innerText = randomQuoteData.quote ;
+        document.getElementById("author").innerText = randomQuoteData.author ;      }
+    </script>
+
+  </head>
+  <body>
+    <div class= "container">
+      <div class="row py-5">
+        <div class="col-md-8 offset-md-2">
+      <wrapper id="quote-box">
+        <div class="card">
+          <div class="card-header">
+            Quote
+          </div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <h3>
+            <div id="text" ></div>
+            </h3>
+            <footer>
+              <h3>
+                <div id="author" class="blockquote-footer"></div>
+              </h3>
+            </footer>
+          </blockquote>
+            <div class="<button type="button" name="button">
+              <button id="new-quote" onclick="generateQuote();" class="btn btn-success btn-lg" >New Quote</button>
+              <a src="#" id="tweet-quote" class="btn btn-primary btn-lg" title="Tweet me!" href="https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=%22If%20you%20can%20dream%20it%2C%20you%20can%20achieve%20it.%22%20Zig%20Ziglar">Tweet Quote
+                <i class:"fa fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </wrapper>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
